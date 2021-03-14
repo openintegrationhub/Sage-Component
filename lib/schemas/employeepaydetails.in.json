@@ -1,0 +1,101 @@
+{
+    "type": "object",
+    "properties": {
+        "employeeId": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "description": "Request data for pay details of an employee",
+            "type": "object",
+            "required": [
+                "data"
+            ],
+            "properties": {
+                "data": {
+                    "type": "object",
+                    "required": [
+                        "id",
+                        "employeeId"
+                    ],
+                    "minProperties": 1,
+                    "properties": {
+                        "id": {
+                            "readOnly": true,
+                            "type": "string",
+                            "example": "a2K9E000000LlIDUA0"
+                        },
+                        "employeeId": {
+                            "readOnly": true,
+                            "type": "string",
+                            "example": "a2G7E000000LlIDUA5"
+                        },
+                        "period": {
+                            "type": "string",
+                            "nullable": true,
+                            "example": "7"
+                        },
+                        "additionalFields": {
+                            "type": "array",
+                            "items": {
+                                "type": "object",
+                                "required": [
+                                    "name",
+                                    "value"
+                                ],
+                                "properties": {
+                                    "target": {
+                                        "type": "string",
+                                        "example": "Document_Type__c"
+                                    },
+                                    "value": {
+                                        "anyOf": [
+                                            {
+                                                "type": "string",
+                                                "nullable": true
+                                            },
+                                            {
+                                                "type": "integer",
+                                                "nullable": true
+                                            },
+                                            {
+                                                "type": "boolean",
+                                                "nullable": true
+                                            },
+                                            {
+                                                "type": "number",
+                                                "nullable": true
+                                            }
+                                        ],
+                                        "example": "Payslip"
+                                    }
+                                }
+                            }
+                        },
+                        "document": {
+                            "type": "object",
+                            "nullable": true,
+                            "required": [
+                                "name",
+                                "content"
+                            ],
+                            "properties": {
+                                "name": {
+                                    "type": "string",
+                                    "example": "Sample.txt"
+                                },
+                                "content": {
+                                    "writeOnly": true,
+                                    "type": "string",
+                                    "format": "byte",
+                                    "description": "Base64 encoded file content",
+                                    "example": "U2FtcGxlIFRleHQ="
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

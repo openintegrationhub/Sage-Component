@@ -1,0 +1,158 @@
+{
+    "title": "Sage People API",
+    "description": "The Sage People API provides a means to extract data from the Sage People application.\n\n# Authorization\n\nYou need a bearer token to authenticate with Sage People API, see the Get Started section for more information.\n\n# Headers\n\nRequests to Sage People API need the following header: `Accept: application/json`\n\n<!-- ReDoc-Inject: <security-definitions> -->\n\n&nbsp;\n",
+    "docsUrl": "https://developer.sage.com/api/people/",
+    "url": "https://{domain}/services/apexrest/spapi/v4",
+    "envVars": {},
+    "credentials": {
+        "fields": {
+            "server": {
+                "label": "Server",
+                "viewClass": "SelectView",
+                "model": [
+                    "https://{domain}/services/apexrest/spapi/v4 - The production API server",
+                    "--- Custom URL"
+                ],
+                "required": true
+            },
+            "otherServer": {
+                "label": "Custom Server URL",
+                "viewClass": "TextFieldView"
+            },
+            "auth_bearerAuth": {
+                "label": "bearerAuth (Salesforce Access Token)",
+                "viewClass": "TextFieldView"
+            }
+        }
+    },
+    "triggers": {
+        "startFlow": {
+            "main": "./lib/triggers/startFlow.js",
+            "type": "polling",
+            "title": "Start Flow",
+            "fields": {}
+        }
+    },
+    "actions": {
+        "salaries": {
+            "main": "./lib/actions/salaries.js",
+            "title": "Get Salaries",
+            "description": "Retrieve a paginated list of salaries",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/salaries.in.json",
+                "out": "./lib/schemas/salaries.out.json"
+            }
+        },
+        "employees": {
+            "main": "./lib/actions/employees.js",
+            "title": "Get Employees",
+            "description": "Retrieve a paginated list of employees",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/employees.in.json",
+                "out": "./lib/schemas/employees.out.json"
+            }
+        },
+        "employeeById": {
+            "main": "./lib/actions/employeeById.js",
+            "title": "Get Employee by Id",
+            "description": "Retrieve a single employee",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/employeeById.in.json",
+                "out": "./lib/schemas/employeeById.out.json"
+            }
+        },
+        "employeepaydetails": {
+            "main": "./lib/actions/employeepaydetails.js",
+            "title": "Add Pay Details",
+            "description": "Add new pay details for a single employee",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/employeepaydetails.in.json",
+                "out": "./lib/schemas/employeepaydetails.out.json"
+            }
+        },
+        "absences": {
+            "main": "./lib/actions/absences.js",
+            "title": "Get Absences",
+            "description": "Retrieve a paginated list of absences",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/absences.in.json",
+                "out": "./lib/schemas/absences.out.json"
+            }
+        },
+        "bonuses": {
+            "main": "./lib/actions/bonuses.js",
+            "title": "Get Bonuses",
+            "description": "Retrieve a paginated list of bonuses",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/bonuses.in.json",
+                "out": "./lib/schemas/bonuses.out.json"
+            }
+        },
+        "absenceBalances": {
+            "main": "./lib/actions/absenceBalances.js",
+            "title": "Get Absence Balances",
+            "description": "Retrieve a paginated list of absence balances",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/absenceBalances.in.json",
+                "out": "./lib/schemas/absenceBalances.out.json"
+            }
+        },
+        "timesheets": {
+            "main": "./lib/actions/timesheets.js",
+            "title": "Get Timesheets",
+            "description": "Retrieve a paginated list of timesheets",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/timesheets.in.json",
+                "out": "./lib/schemas/timesheets.out.json"
+            }
+        }
+    }
+}

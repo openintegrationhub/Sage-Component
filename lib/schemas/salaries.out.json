@@ -1,0 +1,11 @@
+{
+    "type": "object",
+    "properties": {
+        "marker": {
+            "type": "string"
+        },
+        "_filter": {
+            "type": "string"
+        }
+    }
+}
