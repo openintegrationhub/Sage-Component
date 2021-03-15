@@ -1,4 +1,4 @@
-# ![LOGO](logo.png) Sage People API OIH Connector
+# <img src="./sage.jpg" width="250" height="250"> Sage People API OIH Connector
 
 ## Description
 
