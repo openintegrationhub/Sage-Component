@@ -1,4 +1,6 @@
-# <img src="./sage.jpg" width="250" height="250"> Sage People API OIH Connector
+# <p align="center" width="100%"> <img src="./sage.jpg" width="250" height="250"> </p> 
+# <p align="center" width="100%"> Sage People API OIH Connector </p> 
+<!-- <img src="./sage.jpg" width="250" height="250"> Sage People API OIH Connector -->
 
 ## Description
 
